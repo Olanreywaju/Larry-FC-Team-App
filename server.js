@@ -19,6 +19,6 @@ mongoose.connect(process.env.db).then(()=>{
     app.listen(PORT, ()=>{
     console.log(`Server is listening to PORT: ${PORT}`);
  })
-}) .catch (()=>{
-    console.log('unable to connect to db due to'+err);
+}) .catch ((error)=>{
+    console.log('unable to connect to db due to'+error);
 });

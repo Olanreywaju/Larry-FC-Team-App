@@ -18,6 +18,9 @@ exports.createPlayer = async (req, res) => {
     }
 };
 
+
+
+
 exports.getPlayer = async (req, res) => {
     try {
         const id = req.params.id;
@@ -26,7 +29,10 @@ exports.getPlayer = async (req, res) => {
         if (!player) {
             return res.status(404).json ('Player not found')
         }
-        return res.status(200).json('Player successfully created')
+        return res.status(200).json({
+            message: 'Player successfully found',
+            data: player
+        })
     } catch (error) {
         res.status(500).json({
             error: 'Error getting a player'
